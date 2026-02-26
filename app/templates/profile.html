@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="profile-card">
+
+  <div class="profile-top">
+    <img src="{{ url_for('static', filename='profile.png') }}" class="avatar">
+
+    <h2 class="name">{{ fullname }}</h2>
+    <p class="handle">@{{ username }}</p>
+    <p class="meta">{{ location }}</p>
+    <p class="meta">Joined {{ joined }}</p>
+  </div>
+
+  <div class="profile-bottom">
+    <p class="bio">
+      {{ bio }}
+    </p>
+
+    <div class="stats">
+      <div>
+        <strong>{{ posts }}</strong>
+        <p>Posts</p>
+      </div>
+      <div>
+        <strong>{{ following }}</strong>
+        <p>Following</p>
+      </div>
+      <div>
+        <strong>{{ followers }}</strong>
+        <p>Followers</p>
+      </div>
+    </div>
+
+    <button class="follow-btn">Follow</button>
+  </div>
+
+</div>
+
+{% endblock %}
